@@ -98,8 +98,13 @@ public class Game {
     System.out.println("Will you... \n A. Help them at the cost of being on time to class\nB. Ignore them and continue walking to class\nC. Laugh in their face and walk off")
     String choice1 = scanner.nextLine();
     if (choice1 = "a") || (choice1 = "A"){
-        System.our.println("You ")
-    }
+        System.out.println("By helping them, you gain an acquaintance and more respect! \n +1 Experience");
+        System.out.println("You were late to class and missed some really crucial information.\n -1 Intelligence")
+    } else if (choice1 = "b") || (choice1 = "B"){
+        System.out.println("You mind your business and hurry off to class.")
+    } else if (choice1 = "c") || (choice1 = "C"){
+        System.out.println("Everyone think")
+    }  
     //String answer = TimedInput.getUserInputWithTimeout(10);
     //System.out.println("You entered " + answer + " in time!");
 
