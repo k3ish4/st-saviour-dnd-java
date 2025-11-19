@@ -168,29 +168,36 @@ public class Game {
             System.out.println("Will you...\n A. Run all the way to home base at the risk of tripping on your shoelace\n B. Play it safe and just run to second base.");
             String choice1 = scanner.nextLine();
             if (choice1.equals("a") || choice1.equals("A")){
-                int roll = Player.rollD6();
+                int roll2 = Player.rollD6();
                 if (agility > 3){
-                    roll += 1;
+                    roll2 += 1;
                     System.out.println("Your Agility may give you a boost!");
                 }
-                if (roll > 3){
+                if (roll2 > 3){
                     System.out.println("You made it to home base without tripping and just earned your team the winning point!\n +1 Experience");
                     Experience += 1;
                 } else {
                     System.out.println("You tripped on your shoelace and fell flat on your face. You managed to walk it off with no aura damage whilst hiding the fact that you nose is killing you. \n -1 Agility");
                     agility -= 1;
-                } else if (choice1.equals("b") || choice1.equals("B")){
+                } 
+            } else if (choice1.equals("b") || choice1.equals("B")){
                     System.out.println("You decided not to try your luck and take things one base at a time.");
-                }
-           
-            }     
-        }
+                }     
+            if ((experience <= 0) || (agility <= 0)){
+                System.out.println("You've taken too much damage and failed to survive a day at St. Saviour. Game over.");
+            } else {
+                System.out.println("\nDuring your lunch period, a classmate asks you to study with them in the library in case Ms. Cush gives a pop quiz later that day.");
+                System.out.println("Will you...\n A. Go study but stay hungry and sacrifice some strength\n B. Eat lunch and hope there's no quiz later");
+            }
+            }
     
+    }
     //String answer = TimedInput.getUserInputWithTimeout(10);
     //System.out.println("You entered " + answer + " in time!");
-    }
+}
     
 }
-
 }
 }    
+}
+
