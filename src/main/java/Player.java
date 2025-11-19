@@ -11,5 +11,6 @@ public class Player{
     public static int rollD6() {
         int r = (int)(Math.random() * 6) + 1;
         return r;
+    }
 
 }

@@ -116,8 +116,8 @@ public class Game {
     if (aura <= 0){
         System.out.println("You've taken too much damage and failed to survive a day at St. Saviour. Game over.");
     } else{
-        System.out.println("During your math class, Mr. Sadushi calls on you to answer a question when you weren't paying attention.")
-        System.out.println("Will you...\n A. Take a wild guess\n B. Say nothing\n C. Attempt to get out of this by cracking a joke")
+        System.out.println("During your math class, Mr. Sadushi calls on you to answer a question when you weren't paying attention.");
+        System.out.println("Will you...\n A. Take a wild guess\n B. Say nothing\n C. Attempt to get out of this by cracking a joke");
         String choice2 = scanner.nextLine();
         if (choice2.equals("a") || choice2.equals("A")){
             int roll = Player.rollD6();
@@ -155,7 +155,7 @@ public class Game {
            System.out.println("!!!QUICK TIME EVENT!!!\n You feel yourself lose your footing for a moment on the stairs! \n Type the word 'save' within 5 sec to save yourself from falling!");
            String qt1 = TimedInput.getUserInputWithTimeout(10);
            if (qt1.equals("save")){
-            System.out.println("Phew! that was close!")
+            System.out.println("Phew! that was close!");
            }else{
             System.out.println("You fell down the stairs pretty badly and like 5 people saw. You twisted your ankle and embarrassed yourself. \n -1 Aura \n -1 Agility");
             agility -= 1;
@@ -164,10 +164,10 @@ public class Game {
            if((aura <= 0) || (agility <= 0)){
             System.out.println("You've taken too much damage and failed to survive a day at St. Saviour. Game over.");
            }else{
-            System.out.println("\nDuring a game of kickball at Gym class, you're standing at first base and you see an opportunity to run all the way back to home base without being intercepted.\nYou also notice at the last minute that your shoelace is untied and you have no time to sort that out.")
+            System.out.println("\nDuring a game of kickball at Gym class, you're standing at first base and you see an opportunity to run all the way back to home base without being intercepted.\nYou also notice at the last minute that your shoelace is untied and you have no time to sort that out.");
             System.out.println("Will you...\n A. Run all the way to home base at the risk of tripping on your shoelace\n B. Play it safe and just run to second base.");
-            String choice1 = scanner.nextLine();
-            if (choice1.equals("a") || choice1.equals("A")){
+            String choice3 = scanner.nextLine();
+            if (choice3.equals("a") || choice3.equals("A")){
                 int roll2 = Player.rollD6();
                 if (agility > 3){
                     roll2 += 1;
@@ -175,12 +175,12 @@ public class Game {
                 }
                 if (roll2 > 3){
                     System.out.println("You made it to home base without tripping and just earned your team the winning point!\n +1 Experience");
-                    Experience += 1;
+                    experience += 1;
                 } else {
                     System.out.println("You tripped on your shoelace and fell flat on your face. You managed to walk it off with no aura damage whilst hiding the fact that you nose is killing you. \n -1 Agility");
                     agility -= 1;
                 } 
-            } else if (choice1.equals("b") || choice1.equals("B")){
+            } else if (choice3.equals("b") || choice3.equals("B")){
                     System.out.println("You decided not to try your luck and take things one base at a time.");
                 }     
             if ((experience <= 0) || (agility <= 0)){
@@ -188,6 +188,14 @@ public class Game {
             } else {
                 System.out.println("\nDuring your lunch period, a classmate asks you to study with them in the library in case Ms. Cush gives a pop quiz later that day.");
                 System.out.println("Will you...\n A. Go study but stay hungry and sacrifice some strength\n B. Eat lunch and hope there's no quiz later");
+                String choice4 = scanner.nextLine();
+                if (choice4.equals("a") || choice4.equals("A")){
+                    System.out.println("You skip lunch for a day to do some extra studying. Your stomach clearly disagrees with this decision.\n +1 Intelligence \n -1 Agility");
+                    agility -= 1;
+                    intelligence += 1;
+                } else if (choice3.equals("b") || choice3.equals("B")){
+                    System.out.println("");
+                }
             }
             }
     
