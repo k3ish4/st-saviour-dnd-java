@@ -9,7 +9,7 @@ public class Game {
     }
 
     public static void main(String[] args) {
-
+    
     // Welcoming the player
     System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⣾⣿⣦⣀⣴⣿⣷\n" + //
                 "⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠛⣻⣿⠛⣿⣟⠛                  Welcome to your first day of a new school\n" + //
@@ -78,18 +78,6 @@ public class Game {
         skillpoints -= experience;
     }
 
-    System.out.println("You walk up the stairs towards your first period math class. You encounter an underclassman struggling really hard to unlock their locker.");
-    System.out.println("Will you... \n A. Help them at the cost of being on time to class\nB. Ignore them and continue walking to class\nC. Laugh in their face and walk off")
-    String choice1 = scanner.nextLine();
-    if (choice1.equals("a") || choice1.equals("A")){
-        System.out.println("By helping them, you gain an acquaintance and more respect! \n +1 Experience");
-        System.out.println("You were late to class and missed some really crucial information.\n -1 Intelligence")
-    } else if (choice1.equals("b") || choice1.equals("B")){
-        System.out.println("You mind your business and hurry off to class.");
-    } else if (choice1.equals("c") || choice1.equals("C")){
-        System.out.println("Everyone sees you attemt to ridicule this girl and now they think you're a jerk. \n -2 Aura");
-    }  
-
     String grade = null;
     String bonus = null;
     if (gradenumber == "9"){
@@ -110,9 +98,59 @@ public class Game {
         experience += 1;
     }
 
-    System.out.println("Great! Lets get started on your stats. As a " + grade + ", you get +1 " + bonus + "!");
+    System.out.println("Great! As a " + grade + ", you get +1 " + bonus + "!");
+
+    System.out.println("You walk up the stairs towards your first period math class. You encounter an underclassman struggling really hard to unlock their locker.");
+    System.out.println("Will you... \n A. Help them at the cost of being on time to class\n B. Ignore them and continue walking to class\n C. Laugh in their face and walk off");
+    String choice1 = scanner.nextLine();
+    if (choice1.equals("a") || choice1.equals("A")){
+        System.out.println("By helping them, you gain an acquaintance and more respect! \n +1 Experience");
+        System.out.println("You were late to class and missed some really crucial information.\n -1 Intelligence");
+        intelligence += 1;
+    } else if (choice1.equals("b") || choice1.equals("B")){
+        System.out.println("You mind your business and hurry off to class.");
+    } else if (choice1.equals("c") || choice1.equals("C")){
+        System.out.println("Everyone sees you attemt to ridicule this girl and now they think you're a jerk. \n -2 Aura");
+        aura -= 1;
+    }  
+    if (aura <= 0){
+        System.out.println("You've lost all your Aura and failed to survive a day at St. Saviour. Game Over.");
+    } else{
+        System.out.println("During your math class, Mr. Sadushi calls on you to answer a question when you weren't paying attention.")
+        System.out.println("Will you...\n A. Take a wild guess\n B. Say nothing\n C. Attempt to get out of this by cracking a joke")
+        String choice2 = scanner.nextLine();
+    if (choice2.equals("a") || choice2.equals("A")){
+        int roll = Player.rollD6();
+        if (intelligence >= 3){
+            roll += 1;
+            System.out.println("Your intelligence may give you a boost!");
+        }
+        if (roll > 3){
+            System.out.println("You guessed correctly and avoided aura damage!\n +1 Experience");
+            experience += 1;
+        } else {
+            System.out.println("You unfortunately guessed really wrong. Someone in the back of the class laughed. At least you tried!\n -1 Aura\n +1 Experience");
+            aura -= 1;
+        }
+    } else if (choice2.equals("b") || choice2.equals("B")){
+        System.out.println("After some awkward silence, Mr. Sadushi lets you off the hook and chooses someone else.\n -1 Aura\n -1 Experience");
+    } else if (choice2.equals("c") || choice2.equals("C")){
+        int roll = Player.rollD6();
+        if (experience > 3){
+            roll += 1;
+            System.out.println("Your Experience may give you a boost!");
+        }
+        if (roll > 3){
+            System.out.println("Everyone laughed it off and moved on. You avoided aura damage!");
+        } else {
+            System.out.println("Mr. Sadushi was not amused by your joke.\n -1 Aura");
+    }
+    
     //String answer = TimedInput.getUserInputWithTimeout(10);
     //System.out.println("You entered " + answer + " in time!");
-
     }
+    
+}
+
+}
 }    

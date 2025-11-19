@@ -8,5 +8,8 @@ public class Player{
     public int experience;
     public int agility;
 
+    public static int rollD6() {
+        int r = (int)(Math.random() * 6) + 1;
+        return r;
 
 }
