@@ -134,8 +134,8 @@ public class Game {
             }
         }
         printDramaticText("\nYour next class is Gym, so you make your way downstairs.");
-        printDramaticText("!!!QUICK TIME EVENT!!!\n You feel yourself lose your footing for a moment on the stairs! \n Type the word 'save' within 5 sec to save yourself from falling!");
-        String qt1 = TimedInput.getUserInputWithTimeout(5);
+        printDramaticText("!!!QUICK TIME EVENT!!!\n You feel yourself lose your footing for a moment on the stairs! \n Type the word 'save' within 10 sec to save yourself from falling!");
+        String qt1 = TimedInput.getUserInputWithTimeout(10);
         if (qt1.equals("save")){
         printDramaticText("Phew! that was close!");
         }else{
@@ -148,12 +148,12 @@ public class Game {
         String choice3 = scanner.nextLine();
         if (choice3.equals("a") || choice3.equals("A")){
             int roll2 = Player.rollD6();
-            if (agility > 3){
+            if (agility >= 3){
                 roll2 += 1;
                 printDramaticText("Your Agility may give you a boost!");
             }
             if (roll2 > 3){
-                printDramaticText("You made it to home base without tripping and just earned your team the winning point!\n +1 Experience");
+                printDramaticText("You made it to home base without tripping and just earned your team the winning point!\n +1 Experience\n +22 Aura");
                 experience += 1;
             } else {
                 printDramaticText("You tripped on your shoelace and fell flat on your face. You managed to walk it off with no aura damage whilst hiding the fact that you nose is killing you. \n -1 Agility");
@@ -176,8 +176,8 @@ public class Game {
         printDramaticText("\nYou make your way to your last class of the day, Biology.");
         printDramaticText("!!!QUICK TIME EVENT!!!");
         printDramaticText("It turns out Ms. Cush did have a POP QUIZ planned afterall!");
-        printDramaticText("What is the powerhouse of the cell? Type the answer within 5 seconds to pass the quiz"); 
-        String qt2 = TimedInput.getUserInputWithTimeout(5);
+        printDramaticText("What is the powerhouse of the cell? Type the answer within 10 seconds to pass the quiz"); 
+        String qt2 = TimedInput.getUserInputWithTimeout(10);
         if (qt2.equals("mitochondria")) {
             printDramaticText("Congrats! You passed the pop quiz! \n +1 Intelligence");
         } else{
