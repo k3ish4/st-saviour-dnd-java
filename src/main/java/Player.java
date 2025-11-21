@@ -1,7 +1,7 @@
 public class Player{
 
     public String name;
-    public String grade;
+    public String gradenumber;
 
     public int intelligence; 
     public int aura;

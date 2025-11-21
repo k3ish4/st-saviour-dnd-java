@@ -70,27 +70,21 @@ public class Game {
     skillpoints -= experience;
 
 
-    String grade = null;
-    String bonus = null;
+
     if (gradenumber == "9"){
-        grade.equals("freshman");
-        bonus.equals("Agility");
+        printDramaticText("As a freshman, you get an Agility bonus!\n +1 Agility");
         agility += 1;
     } else if (gradenumber == "10"){
-        grade.equals("sophomore");
-        bonus.equals("Intelligence");
+        printDramaticText("As a sophomore, you get an Intelligence bonus!\n +1 Intelligence");
         intelligence += 1;
     } else if (gradenumber == "11"){
-        grade.equals("junior");
-        bonus = "Aura";
+        printDramaticText("As a junior, you get an Aura bonus!\n +1 Aura");
         aura += 1;
     } else if (gradenumber == "10"){
-        grade.equals("senior");
-        bonus.equals("Experience");
+        printDramaticText("As a freshman, you get an Agility bonus!\n +1 Agility");
         experience += 1;
     }
 
-    printDramaticText("Great! As a " + grade + ", you get +1 " + bonus + "!\n");
 
     printDramaticText("Here are your stats. \n Agility: " + agility + "\n Intelligence: " + intelligence + "\n Aura: " + aura + "\n Experience: " + experience);
 
@@ -127,11 +121,11 @@ public class Game {
                 experience += 1;
                 aura -= 1;
             }
-    }   else if (choice2.equals("b") || choice2.equals("B")){
+        } else if (choice2.equals("b") || choice2.equals("B")){
             printDramaticText("After some awkward silence, Mr. Sadushi lets you off the hook and chooses someone else.\n -1 Aura\n -1 Experience");
             experience -= 1;
             aura -= 1;
-    }   else if (choice2.equals("c") || choice2.equals("C")){
+        } else if (choice2.equals("c") || choice2.equals("C")){
             int roll = Player.rollD6();
             if (experience > 3){
                 roll += 1;
@@ -147,7 +141,7 @@ public class Game {
         } else {
            printDramaticText("Your next class is Gym, so you make your way downstairs.");
            printDramaticText("!!!QUICK TIME EVENT!!!\n You feel yourself lose your footing for a moment on the stairs! \n Type the word 'save' within 5 sec to save yourself from falling!");
-           String qt1 = TimedInput.getUserInputWithTimeout(10);
+           String qt1 = TimedInput.getUserInputWithTimeout(5);
            if (qt1.equals("save")){
             printDramaticText("Phew! that was close!");
            }else{
