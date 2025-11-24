@@ -5,7 +5,7 @@ public class Game {
 
     public static void printDramaticText(String text) {
         // Delay in milliseconds
-        int delay = 10;
+        int delay = 40;
 
         for (char c : text.toCharArray()) {
             System.out.print(c);
@@ -14,7 +14,7 @@ public class Game {
             } catch (InterruptedException e) {
                 System.err.println("Interrupted: " + e.getMessage());
                 Thread.currentThread().interrupt();
-            }
+            } 
         }
         System.out.println();
     }
@@ -42,7 +42,7 @@ public class Game {
         // Welcome the player to the game.
         printDramaticText("\nIt's time for you to set up your stats! \nThere are four stats: Agility, Intelligence, Aura, and Experience.");
         printDramaticText("You have 9 skill points that you can allocate between your skills any way you like! ");
-        printDramaticText("Should I to explain the functions of each stat? type 'yes' or 'no'. \n");
+        printDramaticText("Should I explain the functions of each stat? Type 'yes' or 'no'. \n");
         String explain = scanner.nextLine();
         // Provide an option to explain what the stats do
         if (explain.equals("yes")){
